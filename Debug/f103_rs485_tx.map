@@ -3099,7 +3099,7 @@ LOAD /opt/st/stm32cubeide_1.10.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .debug_macro   0x00000000000165b5      0x2f1 ./main_app/source/timer4.o
  .debug_macro   0x00000000000168a6      0x2f7 ./main_app/source/uart.o
 
-.debug_line     0x0000000000000000     0x6b69
+.debug_line     0x0000000000000000     0x6b67
  .debug_line    0x0000000000000000      0x6cf ./Core/Src/main.o
  .debug_line    0x00000000000006cf      0x604 ./Core/Src/stm32f1xx_hal_msp.o
  .debug_line    0x0000000000000cd3      0x6c7 ./Core/Src/stm32f1xx_it.o
@@ -3109,11 +3109,11 @@ LOAD /opt/st/stm32cubeide_1.10.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .debug_line    0x0000000000001f60      0x8b0 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_line    0x0000000000002810      0xa98 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_line    0x00000000000032a8      0xcbc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_line    0x0000000000003f64      0x891 ./main_app/source/main_app.o
- .debug_line    0x00000000000047f5      0x8ab ./main_app/source/spi.o
- .debug_line    0x00000000000050a0      0x8fe ./main_app/source/spi_lcd.o
- .debug_line    0x000000000000599e      0x8d3 ./main_app/source/timer4.o
- .debug_line    0x0000000000006271      0x8f8 ./main_app/source/uart.o
+ .debug_line    0x0000000000003f64      0x88f ./main_app/source/main_app.o
+ .debug_line    0x00000000000047f3      0x8ab ./main_app/source/spi.o
+ .debug_line    0x000000000000509e      0x8fe ./main_app/source/spi_lcd.o
+ .debug_line    0x000000000000599c      0x8d3 ./main_app/source/timer4.o
+ .debug_line    0x000000000000626f      0x8f8 ./main_app/source/uart.o
 
 .debug_str      0x0000000000000000    0x7fbe2
  .debug_str     0x0000000000000000    0x7a9ad ./Core/Src/main.o

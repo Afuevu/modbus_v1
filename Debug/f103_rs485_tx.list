@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00016b9d  00000000  00000000  00025700  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00006b69  00000000  00000000  0003c29d  2**0
+ 17 .debug_line   00006b67  00000000  00000000  0003c29d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0007fbe2  00000000  00000000  00042e06  2**0
+ 18 .debug_str    0007fbe2  00000000  00000000  00042e04  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000c29e8  2**0
+ 19 .comment      00000050  00000000  00000000  000c29e6  2**0
                   CONTENTS, READONLY
  20 .debug_frame  000013e4  00000000  00000000  000c2a38  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -2598,7 +2598,7 @@ int main_app(void) {
  8000dce:	4a38      	ldr	r2, [pc, #224]	; (8000eb0 <main_app+0xec>)
  8000dd0:	f043 0308 	orr.w	r3, r3, #8
  8000dd4:	6193      	str	r3, [r2, #24]
-	GPIOB->CRL &= ~(0x0F << 20);
+	GPIOB->CRL &= ~(0x0F << 20); // pb5
  8000dd6:	4b37      	ldr	r3, [pc, #220]	; (8000eb4 <main_app+0xf0>)
  8000dd8:	681b      	ldr	r3, [r3, #0]
  8000dda:	4a36      	ldr	r2, [pc, #216]	; (8000eb4 <main_app+0xf0>)
@@ -2611,7 +2611,7 @@ int main_app(void) {
  8000de8:	f443 1340 	orr.w	r3, r3, #3145728	; 0x300000
  8000dec:	6013      	str	r3, [r2, #0]
 
-	GPIOB->CRL &= ~(0x0F << 24);
+	GPIOB->CRL &= ~(0x0F << 24); // pb6
  8000dee:	4b31      	ldr	r3, [pc, #196]	; (8000eb4 <main_app+0xf0>)
  8000df0:	681b      	ldr	r3, [r3, #0]
  8000df2:	4a30      	ldr	r2, [pc, #192]	; (8000eb4 <main_app+0xf0>)
@@ -2624,7 +2624,7 @@ int main_app(void) {
  8000e00:	f043 7340 	orr.w	r3, r3, #50331648	; 0x3000000
  8000e04:	6013      	str	r3, [r2, #0]
 
-	GPIOB->CRL &= ~(0x0F << 28);
+	GPIOB->CRL &= ~(0x0F << 28); // pb7
  8000e06:	4b2b      	ldr	r3, [pc, #172]	; (8000eb4 <main_app+0xf0>)
  8000e08:	681b      	ldr	r3, [r3, #0]
  8000e0a:	4a2a      	ldr	r2, [pc, #168]	; (8000eb4 <main_app+0xf0>)
@@ -2640,10 +2640,10 @@ int main_app(void) {
 	timer4_Init();
  8000e1e:	f000 fa55 	bl	80012cc <timer4_Init>
 	//uart_init();
-    spi_init();
+	spi_init();
  8000e22:	f000 f84b 	bl	8000ebc <spi_init>
 
-    lcd_init();
+	lcd_init();
  8000e26:	f000 f995 	bl	8001154 <lcd_init>
 	RCC->APB2ENR |= 1 << 4;
  8000e2a:	4b21      	ldr	r3, [pc, #132]	; (8000eb0 <main_app+0xec>)
@@ -2689,31 +2689,30 @@ int main_app(void) {
 		//delay_ms(1000);
 		//GPIOC->ODR &= ~(1 << 13);
 		//delay_ms(1000);
-		for(int i =0; i< 100; i++)
+		for (int i = 0; i < 100; i++) {
  8000e76:	2300      	movs	r3, #0
  8000e78:	607b      	str	r3, [r7, #4]
  8000e7a:	e015      	b.n	8000ea8 <main_app+0xe4>
-		        {
-		            lcd_setCursor(0,0);
+			lcd_setCursor(0, 0);
  8000e7c:	2100      	movs	r1, #0
  8000e7e:	2000      	movs	r0, #0
  8000e80:	f000 f97e 	bl	8001180 <lcd_setCursor>
-		            delay_ms(5);
+			delay_ms(5);
  8000e84:	2005      	movs	r0, #5
  8000e86:	f000 f9e5 	bl	8001254 <delay_ms>
-		            lcd_printn(i);
+			lcd_printn(i);
  8000e8a:	6878      	ldr	r0, [r7, #4]
  8000e8c:	f000 f9b2 	bl	80011f4 <lcd_printn>
-		            delay_ms(95);
+			delay_ms(95);
  8000e90:	205f      	movs	r0, #95	; 0x5f
  8000e92:	f000 f9df 	bl	8001254 <delay_ms>
-		            GPIOC->ODR ^= (1 << 13);
+			GPIOC->ODR ^= (1 << 13);
  8000e96:	4b08      	ldr	r3, [pc, #32]	; (8000eb8 <main_app+0xf4>)
  8000e98:	68db      	ldr	r3, [r3, #12]
  8000e9a:	4a07      	ldr	r2, [pc, #28]	; (8000eb8 <main_app+0xf4>)
  8000e9c:	f483 5300 	eor.w	r3, r3, #8192	; 0x2000
  8000ea0:	60d3      	str	r3, [r2, #12]
-		for(int i =0; i< 100; i++)
+		for (int i = 0; i < 100; i++) {
  8000ea2:	687b      	ldr	r3, [r7, #4]
  8000ea4:	3301      	adds	r3, #1
  8000ea6:	607b      	str	r3, [r7, #4]

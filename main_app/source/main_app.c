@@ -6,13 +6,13 @@
 int main_app(void) {
 
 	RCC->APB2ENR |= 1 << 3;
-	GPIOB->CRL &= ~(0x0F << 20);
+	GPIOB->CRL &= ~(0x0F << 20); // pb5
 	GPIOB->CRL |= (0x03 << 20);
 
-	GPIOB->CRL &= ~(0x0F << 24);
+	GPIOB->CRL &= ~(0x0F << 24); // pb6
 	GPIOB->CRL |= (0x03 << 24);
 
-	GPIOB->CRL &= ~(0x0F << 28);
+	GPIOB->CRL &= ~(0x0F << 28); // pb7
 	GPIOB->CRL |= (0x03 << 28);
 
 	timer4_Init();
