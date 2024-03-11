@@ -1,0 +1,12 @@
+!SESSION 2024-03-07 12:06:59.452 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_NG
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-03-07 12:08:23.469
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-03-07 12:08:23.734
+!MESSAGE Log4j initialized with config file /home/osonoderin/HomeFort/Homefort_Codes/.metadata/.log4j.xml

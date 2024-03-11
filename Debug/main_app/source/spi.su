@@ -1,0 +1,4 @@
+../main_app/source/spi.c:3:6:spi_init	4	static
+../main_app/source/spi.c:30:6:spi_enable	4	static
+../main_app/source/spi.c:34:6:spi_disable	4	static
+../main_app/source/spi.c:38:6:spi_transmit	24	static

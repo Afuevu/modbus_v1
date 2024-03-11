@@ -1,0 +1,6 @@
+../Drivers/CMSIS/Include/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
+../main_app/source/uart.c:14:6:uart_init	8	static
+../main_app/source/uart.c:46:6:USART1_IRQHandler	4	static
+../main_app/source/uart.c:57:6:uart_print	16	static
+../main_app/source/uart.c:65:6:uart_printf	16	static
+../main_app/source/uart.c:75:6:uart_printn	32	static

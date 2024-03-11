@@ -1,0 +1,8 @@
+../main_app/source/spi_lcd.c:8:6:lcd_write_nibble	16	static
+../main_app/source/spi_lcd.c:23:6:lcd_print	16	static
+../main_app/source/spi_lcd.c:32:6:lcd_command	16	static
+../main_app/source/spi_lcd.c:41:6:lcd_init	8	static
+../main_app/source/spi_lcd.c:53:6:lcd_setCursor	96	static
+../main_app/source/spi_lcd.c:67:6:lcd_printf	16	static
+../main_app/source/spi_lcd.c:77:6:lcd_clear	8	static
+../main_app/source/spi_lcd.c:130:6:lcd_printn	16	static
